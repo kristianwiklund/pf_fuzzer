@@ -1,8 +1,8 @@
-#include <TrinketHidCombo.h>
-#include <TrinketHidComboC.h>
+#include <TrinketKeyboard.h>
+
 
 /*
-TrinketHidCombo example
+TrinketKeyboard example
 For Trinket by Adafruit Industries
 */
 
@@ -21,7 +21,7 @@ void setup()
   // remember, the buttons arusbReportSende active-low, they read LOW when they are not pressed
 
   // start USB stuff
-  TrinketHidCombo.begin();
+  TrinketKeyboard.begin();
 }
 char old=HIGH;
 bool muted=false;
@@ -43,7 +43,7 @@ void loop()
 {
   char nnew;
   
-  TrinketHidCombo.poll();
+  TrinketKeyboard.poll();
   // the poll function must be called at least once every 10 ms
   // or cause a keystroke
   // if it is not, then the computer may think that the device
@@ -55,12 +55,9 @@ void loop()
   {
     old = nnew;
     if (nnew == LOW) {
-        if(!muted) 
-        sendmicmute(4);
-            else
-        sendmicmute(0);
+          TrinketKeyboard.pressKey(KEYCODE_MOD_LEFT_CONTROL|KEYCODE_MOD_LEFT_SHIFT,KEYCODE_M);
        
-  muted=!muted;
+    muted=!muted;
     digitalWrite(PIN_LED,muted);
     delay(5);
     }
