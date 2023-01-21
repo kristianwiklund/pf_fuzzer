@@ -18,7 +18,7 @@ ledblinky.hex: ledblinky.elf
 	avr-objcopy -j .text -j .data -O ihex ledblinky.elf ledblinky.hex
 
 upload-ledblinky: ledblinky.hex
-	avrdude -P /dev/ttyUSB0 -c avrisp -p t85 -b 19200 -v -e -U flash:w:ledblinky.hex
+	avrdude -P /dev/ttyUSB1 -c avrisp -p t85 -b 19200 -v -e -U flash:w:ledblinky.hex
 
 
 

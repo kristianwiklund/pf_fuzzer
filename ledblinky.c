@@ -7,12 +7,15 @@
 
 
 int main() {
-  //	DDRB |= 8; // LED on PB1
-	DDRB = 0x3F;	
+  	DDRB |= 8; // LED on PB3
+	//	DDRB = 0x3F;	
 	while(1) {
-		PORTB = 255; // Turn LED on
+	  //		PORTB = 255; // Turn LED on
+		PORTB |= (1 << PB3);
 		_delay_ms(1000);
-		PORTB = 0; // Turn LED off
+		//		PORTB = 0; // Turn LED off
+
+		PORTB &= ~(1 << PB3);
 		_delay_ms(1000);
 	}
 
