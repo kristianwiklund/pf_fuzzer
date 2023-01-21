@@ -1,0 +1,8 @@
+42c42
+< #define USB_CFG_DMINUS_BIT      3
+---
+> #define USB_CFG_DMINUS_BIT      1
+46c46
+< #define USB_CFG_DPLUS_BIT       4
+---
+> #define USB_CFG_DPLUS_BIT       2
