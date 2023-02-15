@@ -1,4 +1,4 @@
-# Fuzzer for Pathfinder Wrath of the Righteous
+# Fuzzer for Pathfinder Wrath of the Righteous Console Puzzle
 
 ## Hardware
 
